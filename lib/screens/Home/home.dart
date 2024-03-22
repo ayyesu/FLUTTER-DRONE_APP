@@ -1,19 +1,77 @@
 import 'package:flutter/material.dart';
 
-class Home extends StatefulWidget {
+class Home extends StatelessWidget {
   const Home({super.key});
 
   @override
-  State<Home> createState() => _HomeState();
+  Widget build(BuildContext context) {
+    return Scaffold(
+        body: SafeArea(
+      child: Padding(
+        padding: const EdgeInsets.all(12.0),
+        child: Row(
+          // mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            SizedBox(
+              height: 80.0,
+              width: 80.0,
+              child: ClipRRect(
+                borderRadius: BorderRadius.circular(50),
+                child: Image.asset(
+                  'assets/person.jpg',
+                  fit: BoxFit.cover,
+                ),
+              ),
+            ),
+            const SizedBox(width: 20),
+            const Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Padding(
+                  padding: EdgeInsets.fromLTRB(0.0, 20.0, 0.0, 0.0),
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Text(
+                        'Adila Sajon',
+                        style: TextStyle(
+                            fontSize: 25.0, fontWeight: FontWeight.w400),
+                      ),
+                      Text(
+                        'Premium Customer',
+                        style: TextStyle(fontSize: 14.0),
+                      )
+                    ],
+                  ),
+                ),
+              ],
+            ),
+            const Spacer(),
+            const Padding(
+              padding: EdgeInsets.fromLTRB(0.0, 20.0, 0.0, 0.0),
+              child: _buildBellIcon(),
+            )
+          ],
+        ),
+      ),
+    ));
+  }
 }
 
-class _HomeState extends State<Home> {
+// ignore: camel_case_types
+class _buildBellIcon extends StatelessWidget {
+  const _buildBellIcon();
+
   @override
   Widget build(BuildContext context) {
-    return const Scaffold(
-      body: Center(
-        child: Text('Home Screen'),
+    return Container(
+      padding: const EdgeInsets.all(8.0),
+      decoration: BoxDecoration(
+        shape: BoxShape.circle,
+        border: Border.all(color: Colors.grey.shade300, width: 1.0),
       ),
+      child: const Icon(Icons.notifications),
     );
   }
 }
