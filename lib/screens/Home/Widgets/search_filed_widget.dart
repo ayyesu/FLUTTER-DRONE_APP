@@ -51,8 +51,8 @@ class SearchFieldWidget extends StatelessWidget {
               borderRadius: BorderRadius.circular(
                 8.0,
               )),
-          child:
-              const Icon(Icons.whatshot, color: Colors.white, size: iconSize),
+          child: const Icon(Icons.send_rounded,
+              color: Colors.white, size: iconSize),
         ),
         Positioned(
           right: 0.0,

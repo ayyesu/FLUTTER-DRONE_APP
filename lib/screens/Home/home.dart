@@ -18,23 +18,33 @@ class _buildBody extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const SafeArea(
+    return SafeArea(
       child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          Padding(
+          const Padding(
             padding: EdgeInsets.all(12.0),
             child: _buildHeader(),
           ),
-          SizedBox(height: kLargeMargin),
-          Padding(
+          const SizedBox(height: kLargeMargin),
+          const Padding(
             padding: EdgeInsets.symmetric(horizontal: 16.0),
-            child: Text(
-              'Discover this year\'s hottest drone',
-              style: kTitleTextStyle
-            ),
+            child: Text('Discover this year\'s hottest drone',
+                style: kTitleTextStyle),
           ),
-          SizedBox(height: kLargeMargin),
-          Padding(padding: EdgeInsets.all(12.0), child: SearchFieldWidget())
+          const SizedBox(height: kLargeMargin),
+          const Padding(
+              padding: EdgeInsets.all(12.0), child: SearchFieldWidget()),
+          const SizedBox(height: kLargeMargin),
+          Padding(
+            padding: const EdgeInsets.symmetric(horizontal: kDefaultMargin),
+            child: RichText(
+              text: const TextSpan(
+                  text: 'Popular ',
+                  style: kSubTitleTextStyle,
+                  children: [TextSpan(text: 'Drone', style: kTitleTextStyle)]),
+            ),
+          )
         ],
       ),
     );
