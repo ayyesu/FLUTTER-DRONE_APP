@@ -1,0 +1,1 @@
+const appAssets = 'assets';
