@@ -5,12 +5,20 @@ class Home extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-        body: SafeArea(
+    return Scaffold(body: _buildBody(context));
+  }
+}
+
+// ignore: camel_case_types
+class _buildBody extends StatelessWidget {
+  const _buildBody(BuildContext context);
+
+  @override
+  Widget build(BuildContext context) {
+    return SafeArea(
       child: Padding(
         padding: const EdgeInsets.all(12.0),
         child: Row(
-          // mainAxisAlignment: MainAxisAlignment.spaceBetween,
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             SizedBox(
@@ -55,7 +63,7 @@ class Home extends StatelessWidget {
           ],
         ),
       ),
-    ));
+    );
   }
 }
 
